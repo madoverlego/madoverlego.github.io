@@ -2,326 +2,272 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- This tag is crucial for responsive design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hi, I'm Rishi Prasad!</title>
+    <title>🔆 Hi, I'm Rishi Prasad!</title>
+    <!-- Tailwind CSS for responsive utility classes -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oi&family=Inter:wght@400;600;700&family=Comfortaa:wght@400;700&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Custom styles */
+        /* --- Base and Custom Styles --- */
         body {
-            font-family: 'Inter', sans-serif; /* Default font for the page and headings in work section */
+            font-family: 'Inter', sans-serif;
             background-color: #1a1a1a; /* Dark grey background */
-            color: #e0e0e0; /* Light grey text for readability */
-            overflow-x: hidden; /* Prevent horizontal scroll from any subtle glows */
-            box-sizing: border-box; /* Ensure consistent box sizing */
+            color: #e0e0e0; /* Light grey text */
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            box-sizing: border-box;
         }
 
         *, *::before, *::after {
-            box-sizing: inherit; /* Inherit box sizing for all elements */
+            box-sizing: inherit;
         }
 
-
+        /* --- Font Styles --- */
         .font-oi {
-            font-family: 'Oi', cursive; /* Font for the subheading */
+            font-family: 'Oi', cursive;
         }
-
-        /* Reverted font back to Comfortaa for this paragraph */
-        .font-comfortaa {
-             font-family: 'Comfortaa', cursive; /* Font for the paragraph below the main title */
-             font-weight: 400; /* Ensure regular weight for a thinner look */
-        }
-
-        /* Quicksand font for game description */
         .font-readable {
-             font-family: 'Quicksand', sans-serif; /* Font for the game description */
-             font-weight: 400; /* Ensure regular weight for a thinner look */
+             font-family: 'Quicksand', sans-serif;
+             font-weight: 400;
         }
 
+        /* --- Color Palette --- */
+        .text-cerulean { color: #007BA7; }
+        .text-accent-orange { color: #FF8C00; }
+        .text-accent-pink { color: #E91E63; }
+        .text-accent-yellow { color: #FFD700; }
 
-        .text-cerulean {
-            color: #007BA7; /* Cerulean color for the title and accents */
-        }
-
-        /* Complementary Accent Colors */
-        .text-accent-orange { color: #FF8C00; } /* Warm Orange */
-        .stroke-accent-orange { stroke: #FF8C00; }
-
-        .text-accent-pink { color: #E91E63; } /* Vibrant Pink */
-        .stroke-accent-pink { stroke: #E91E63; }
-
-        .text-accent-yellow { color: #FFD700; } /* Bright Yellow / Gold */
-        .stroke-accent-yellow { stroke: #FFD700; }
-
-
-        /* SVG doodle styling */
+        /* --- Decorative Doodles --- */
         .doodle {
             position: absolute;
-            opacity: 0.5; /* Slightly reduced opacity for more subtle background */
-            pointer-events: none; /* Doodles should not interfere with interaction */
+            opacity: 0.5;
+            pointer-events: none;
             z-index: 0;
         }
-        /* Specific colors for doodles are applied via classes on parent div */
-        .doodle-color-orange svg {
-            stroke: #FF8C00; /* Warm Orange */
-        }
-        /* Removed specific pink doodle style as the doodle is removed */
-        .doodle-color-yellow svg {
-            stroke: #FFD700; /* Bright Yellow / Gold */
-        }
-         .doodle-color-pink svg {
-             stroke: #E91E63; /* Vibrant Pink */
-         }
+        .doodle-color-orange svg { stroke: #FF8C00; }
+        .doodle-color-yellow svg { stroke: #FFD700; }
+        .doodle-color-pink svg { stroke: #E91E63; }
 
-
-        /* Neo-brutalist button style */
+        /* --- Neo-Brutalist Button Style --- */
         .neo-btn {
-            border: 2px solid #007BA7; /* Cerulean border */
-            box-shadow: 4px 4px 0px #005b7d; /* Hard shadow for neo-brutalist effect */
+            border: 2px solid #007BA7;
+            box-shadow: 4px 4px 0px #005b7d;
             transition: all 0.15s ease-out;
-            position: relative;
-            display: flex; /* Use flex to align icon and text vertically centered */
-            justify-content: center; /* Center content horizontally */
-            align-items: center; /* Center content vertically */
-            text-align: center; /* Ensure text is centered if it wraps */
-            padding: 0; /* Remove default padding */
-            /* Tailwind classes for size added directly to element */
-            box-sizing: border-box; /* Ensure consistent box sizing */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0;
         }
         .neo-btn:hover {
             transform: translate(2px, 2px);
             box-shadow: 2px 2px 0px #005b7d;
-            border-color: #FFD700; /* Yellow border on hover */
+            border-color: #FFD700;
         }
         .neo-btn:active {
             transform: translate(4px, 4px);
             box-shadow: 0px 0px 0px #005b7d;
         }
-
-        /* Image border style - kept for consistency though images are removed */
-        .image-accent-border {
-            border: 3px solid #FF8C00; /* Static warm orange border */
-            padding: 2px; /* Add padding so border doesn't overlap image edge */
-            box-shadow: 0 0 10px rgba(255, 140, 0, 0.3); /* Subtle orange glow */
-        }
-
-        /* Style for the button content (text and icon) */
         .btn-content {
             display: flex;
-            flex-direction: column; /* Stack icon and text vertically */
-            align-items: center; /* Center content horizontally */
-            justify-content: center; /* Center content vertically */
-            padding: 1rem; /* Add padding inside the button */
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            width: 100%;
+            height: 100%;
         }
-
         .btn-content i {
-            margin-bottom: 0.5rem; /* Add space below the icon */
+            margin-bottom: 0.5rem;
         }
 
-        /* Style for the work item layout */
+        /* --- Responsive Work Item Layout --- */
         .work-item {
             display: flex;
-            flex-direction: column; /* Stack on small screens */
-            align-items: center; /* Center items when stacked */
-            gap: 1.5rem; /* Space between text and button */
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
         }
-
-        @media (min-width: 768px) { /* Medium screens and up */
-            .work-item {
-                flex-direction: row; /* Horizontal layout */
-                justify-content: space-between; /* Space out text and button */
-                align-items: center; /* Center items vertically in row */
-            }
-        }
-
         .work-item-text {
-            flex-grow: 1; /* Allow text to take up available space */
-            /* Removed space-y-4 here, added directly to inner divs */
+            flex-grow: 1;
+            text-align: center;
         }
-
         .work-item-button {
-            flex-shrink: 0; /* Prevent button from shrinking */
-            /* Size is handled by neo-btn classes */
+            flex-shrink: 0;
         }
 
-
-        /* Style for the game box layout */
+        /* --- Responsive Game Box Layout --- */
         .game-box {
-            border: 2px solid #007BA7; /* Cerulean border */
-            box-shadow: 4px 4px 0px #005b7d; /* Hard shadow */
-            border-radius: 0.5rem; /* Rounded corners */
-            overflow: hidden; /* Hide anything outside the border */
-            display: flex; /* Use flexbox for internal layout */
-            flex-direction: column; /* Stack elements vertically */
-            align-items: flex-start; /* Align items to the start (left) */
-            padding: 1.5rem; /* Increased inner padding */
-            background-color: #2a2a2a; /* Slightly lighter background for the box */
-            /* Removed fixed width and margin from here */
-            width: 100%; /* Full width by default */
-            max-width: 350px; /* Increased max width for larger screens */
-            margin: 0; /* Ensure no auto margin */
-            box-sizing: border-box; /* Ensure consistent box sizing */
+            border: 2px solid #007BA7;
+            box-shadow: 4px 4px 0px #005b7d;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1.5rem;
+            background-color: #2a2a2a;
+            width: 100%;
         }
-
-        /* Added responsive width classes directly to the game-box element in HTML */
-
         .game-box .game-title {
-             font-family: 'Oi', cursive; /* Use Oi font for the game title */
-             color: #007BA7; /* Cerulean color */
-             font-size: 1.8rem; /* Increased font size */
-             margin-bottom: 0.8rem; /* Increased space below title */
+             font-family: 'Oi', cursive;
+             color: #007BA7;
+             font-size: 1.8rem;
+             margin-bottom: 0.8rem;
              text-align: center;
+             width: 100%;
         }
-
-         .game-box .game-description {
-             /* Changed font to Quicksand */
+        .game-box .game-description {
              font-family: 'Quicksand', sans-serif;
-             color: #e0e0e0; /* Light grey text */
-             font-size: 1.1rem; /* Increased font size */
-             text-align: left; /* Align description text to the left */
-             margin-bottom: 1.2rem; /* Increased space below description */
-         }
-
-         .game-box .game-button {
-             /* Styles for the button within the game box */
-             display: inline-block;
-             background-color: #007BA7; /* Cerulean background */
-             color: white;
-             font-semibold py-3 px-6 rounded-lg text-lg; /* Existing button styles */
-             border: none; /* Remove default button border */
-             text-decoration: none; /* Remove underline from link */
-             /* Adjusted size and padding for the rectangular button */
-             height: 5rem; /* Increased height */
-             padding: 1rem 1.25rem; /* Increased padding */
-             font-size: 1.4rem; /* Increased font size */
+             color: #e0e0e0;
+             font-size: 1.1rem;
              text-align: center;
-             box-shadow: 2px 2px 0px #005b7d; /* Smaller shadow for inner button */
+             margin-bottom: 1.2rem;
+             flex-grow: 1;
+         }
+         .game-box .game-button {
+             background-color: #007BA7;
+             color: white;
+             border: none;
+             text-decoration: none;
+             padding: 0.8rem 1.25rem;
+             font-size: 1.2rem;
+             text-align: center;
+             box-shadow: 2px 2px 0px #005b7d;
              transition: all 0.15s ease-out;
-             /* Added font family for readability */
              font-family: 'Inter', sans-serif;
-             /* Added display flex and centering for content */
              display: flex;
              align-items: center;
              justify-content: center;
-             /* Ensure button takes full width of its container */
              width: 100%;
-             margin-bottom: 1rem; /* Add space below the button */
+             max-width: 280px;
+             border-radius: 0.5rem;
          }
-
          .game-box .game-button:hover {
              transform: translate(1px, 1px);
              box-shadow: 1px 1px 0px #005b7d;
-             background-color: #005b7d; /* Darker cerulean on hover */
+             background-color: #005b7d;
          }
-
          .game-box .game-button:active {
              transform: translate(2px, 2px);
              box-shadow: 0px 0px 0px #005b7d;
          }
+        
+        /* --- ORIENTATION-BASED STYLES --- */
 
+        /* Portrait Mode (Vertical Screens) */
+        @media (orientation: portrait) {
+            .hero-title {
+                font-size: 2.5rem; /* Smaller title for vertical screens */
+            }
+            .hero-icon {
+                width: 2rem;
+                height: 2rem;
+            }
+            .work-item-text h3 {
+                font-size: 1.5rem; /* Slightly smaller heading */
+            }
+            .work-item-text p {
+                font-size: 1rem;
+            }
+            .work-item-button {
+                 height: 6rem; /* Smaller buttons in portrait */
+            }
+             .btn-content i {
+                font-size: 2rem; /* Smaller icons in portrait */
+            }
+        }
 
+        /* Landscape Mode & Larger Screens */
+        @media (orientation: landscape) {
+             .work-item {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .work-item-text {
+                text-align: left;
+            }
+        }
     </style>
 </head>
 <body class="antialiased">
 
-    <section class="min-h-screen flex flex-col justify-center items-center py-12 px-6 relative overflow-hidden">
-        <div class="doodle doodle-color-orange top-1/4 left-8 w-20 h-20">
-            <svg class="w-full h-full" viewBox="0 0 100 100" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M10 50 Q 20 20, 30 50 T 50 50 Q 60 80, 70 50 T 90 50"></path>
-            </svg>
-        </div>
+    <!-- Hero Section -->
+    <section class="min-h-screen flex flex-col justify-center items-center py-12 px-4 sm:px-6 relative">
+        <!-- Background Doodles (Hidden on small screens) -->
+        <div class="doodle doodle-color-orange top-1/4 left-8 w-20 h-20 hidden md:block"><svg class="w-full h-full" viewBox="0 0 100 100" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 50 Q 20 20, 30 50 T 50 50 Q 60 80, 70 50 T 90 50"></path></svg></div>
+        <div class="doodle doodle-color-yellow top-1/2 left-12 w-14 h-28 hidden lg:block"><svg class="w-full h-full" viewBox="0 0 50 100" fill="none" stroke-width="3"><path d="M10 10 L40 30 L10 50 L40 70 L10 90" /></svg></div>
+        <div class="doodle doodle-color-orange top-1/3 right-20 w-8 h-8 hidden md:block"><svg class="w-full h-full" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 L15.09 8.09 L22 9.27 L17 14 L18.18 21.02 L12 17.77 L5.82 21.02 L7 14 L2 9.27 L8.91 8.09 L12 2 z" /></svg></div>
+        <div class="doodle doodle-color-pink bottom-1/4 left-20 w-6 h-6 hidden lg:block"><svg class="w-full h-full" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><path d="M10 50 Q 30 30, 50 50 T 90 50" /></svg></div>
+        <div class="doodle doodle-color-yellow bottom-1/3 right-10 w-10 h-10 hidden md:block"><svg class="w-full h-full" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3"><circle cx="50" cy="50" r="40" stroke-dasharray="10 10"/></svg></div>
 
-        <div class="doodle doodle-color-yellow top-1/2 left-12 w-14 h-28">
-            <svg class="w-full h-full" viewBox="0 0 50 100" fill="none" stroke-width="3">
-                <path d="M10 10 L40 30 L10 50 L40 70 L10 90" />
-            </svg>
-        </div>
-
-        <div class="doodle doodle-color-orange top-1/3 right-20 w-8 h-8">
-             <svg class="w-full h-full" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                 <path d="M12 2 L15.09 8.09 L22 9.27 L17 14 L18.18 21.02 L12 17.77 L5.82 21.02 L7 14 L2 9.27 L8.91 8.09 L12 2 z" />
-             </svg>
-        </div>
-
-         <div class="doodle doodle-color-pink bottom-1/4 left-20 w-6 h-6">
-             <svg class="w-full h-full" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round">
-                 <path d="M10 50 Q 30 30, 50 50 T 90 50" />
-             </svg>
-         </div>
-
-         <div class="doodle doodle-color-yellow bottom-1/3 right-10 w-10 h-10">
-             <svg class="w-full h-full" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3">
-                 <circle cx="50" cy="50" r="40" stroke-dasharray="10 10"/>
-             </svg>
-         </div>
-
-
-        <div class="text-center max-w-3xl z-10">
-            <h1 class="text-cerulean text-4xl sm:text-5xl md:text-6xl mb-6 relative">
+        <div class="text-center max-w-3xl z-10 px-2">
+            <h1 class="font-oi text-cerulean hero-title text-4xl sm:text-5xl md:text-6xl mb-6 relative">
                 Hi, I'm Rishi Prasad!
-                <svg class="inline-block w-8 h-8 ml-2 text-yellow-400 opacity-80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="inline-block hero-icon w-8 h-8 ml-2 text-yellow-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M12 2 L15.09 8.09 L22 9.27 L17 14 L18.18 21.02 L12 17.77 L5.82 21.02 L7 14 L2 9.27 L8.91 8.09 L12 2 z" />
                 </svg>
             </h1>
-            <p class="font-comfortaa text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed" style="font-family: 'Comfortaa', cursive;">
+            <p class="font-readable text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed">
                 I’m into art, math, coding, and MUN,<br> and I like building projects that push my limits.
             </p>
         </div>
     </section>
 
-    <section class="py-12 sm:py-16 px-6 bg-gray-800/30">
+    <!-- Work Section -->
+    <section class="py-16 sm:py-20 px-4 sm:px-6 bg-gray-800/30">
         <div class="container mx-auto max-w-5xl">
-
-            <h2 class="text-cerulean text-3xl sm:text-4xl md:text-5xl mb-16 relative text-center">Explore My Work</h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-
+            <h2 class="text-cerulean text-3xl sm:text-4xl md:text-5xl mb-12 sm:mb-16 relative text-center">Explore My Work</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-y-12 md:gap-12">
                 <div class="work-item">
-                    <div class="work-item-text space-y-6"> <h3 class="text-3xl font-semibold text-gray-100 flex items-center"> <i class="fas fa-code text-accent-orange mr-3 text-4xl"></i> Projects & Code </h3>
-                        <p class="text-lg text-gray-400"> Dive into the code and see what I've been building on Github.
-                        </p>
+                    <div class="work-item-text space-y-4">
+                        <h3 class="text-2xl lg:text-3xl font-semibold text-gray-100 flex items-center justify-center md:justify-start"><i class="fas fa-code text-accent-orange mr-3 text-3xl"></i> Projects & Code</h3>
+                        <p class="text-base lg:text-lg text-gray-400 px-2">Dive into the code and see what I've been building on Github.</p>
                     </div>
-                    <a href="https://github.com/madoverlego" target="_blank" rel="noopener noreferrer"
-                       class="neo-btn work-item-button w-56 h-32 bg-cerulean text-white font-semibold rounded-lg text-xl"> <div class="btn-content">
-                            <i class="fab fa-github text-5xl"></i> <span>GitHub</span> </div>
+                    <a href="https://github.com/madoverlego" target="_blank" rel="noopener noreferrer" class="neo-btn work-item-button w-full max-w-[240px] h-28 bg-cerulean text-white font-semibold rounded-lg text-lg">
+                        <div class="btn-content">
+                            <i class="fab fa-github text-4xl"></i><span>GitHub</span>
+                        </div>
                     </a>
                 </div>
-
                 <div class="work-item">
-                    <div class="work-item-text space-y-6"> <h3 class="text-3xl font-semibold text-gray-100 flex items-center"> <i class="fas fa-book-open text-accent-pink mr-3 text-4xl"></i> Published Works </h3>
-                        <p class="text-lg text-gray-400"> Check out my published book. A gripping murder mystery set in an isolated lighthouse.
-                        </p>
+                    <div class="work-item-text space-y-4">
+                        <h3 class="text-2xl lg:text-3xl font-semibold text-gray-100 flex items-center justify-center md:justify-start"><i class="fas fa-book-open text-accent-pink mr-3 text-3xl"></i> Published Works</h3>
+                        <p class="text-base lg:text-lg text-gray-400 px-2">Check out my published book. A gripping murder mystery set in an isolated lighthouse.</p>
                     </div>
-                    <a href="https://www.bribooks.com/bookstore/a-murder-in-stillwater" target="_blank" rel="noopener noreferrer"
-                       class="neo-btn work-item-button w-56 h-32 bg-cerulean text-white font-semibold rounded-lg text-xl"> <div class="btn-content">
-                            <i class="fas fa-external-link-alt text-5xl"></i> <span>Book</span> </div>
+                    <a href="https://www.bribooks.com/bookstore/a-murder-in-stillwater" target="_blank" rel="noopener noreferrer" class="neo-btn work-item-button w-full max-w-[240px] h-28 bg-cerulean text-white font-semibold rounded-lg text-lg">
+                        <div class="btn-content">
+                            <i class="fas fa-external-link-alt text-4xl"></i><span>Book</span>
+                        </div>
                     </a>
                 </div>
-
-                <div class="md:col-span-2 space-y-8"> <h3 class="text-3xl font-semibold text-gray-100 flex items-center"> <i class="fas fa-gamepad text-accent-yellow mr-3 text-4xl"></i> Play Games </h3>
-                    <div class="flex flex-wrap gap-8 justify-start">
-                         <div class="game-box" style="width: calc(33.33% - 1.33rem);">
-                             <a href="Synapsis/index.html" class="game-button" style="height: 6rem; font-size: 1.5rem; padding: 1.25rem 1.5rem;">Play Synapsis</a>
-                             <div class="game-description" style="font-size: 1.1rem;">A fun game where you guess products based on their business descriptions.</div>
-                         </div>
-                         </div>
+                <div class="md:col-span-2 space-y-8 pt-8">
+                    <h3 class="text-2xl lg:text-3xl font-semibold text-gray-100 flex items-center justify-center"><i class="fas fa-gamepad text-accent-yellow mr-3 text-3xl lg:text-4xl"></i> Play Games</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="game-box">
+                             <h4 class="game-title">Synapsis</h4>
+                             <p class="game-description">A fun game where you guess products based on their business descriptions.</p>
+                             <a href="Synapsis/index.html" class="game-button">Play Synapsis</a>
+                        </div>
+                    </div>
                 </div>
-
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="text-center py-8 bg-black/50">
         <p class="text-gray-400">&copy; <span id="currentYear"></span> Rishi Prasad. All Rights Reserved.</p>
-
     </footer>
 
     <script>
         // Set current year in footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
-
 </body>
 </html>
