@@ -28,80 +28,45 @@
             display: flex; /* Use flexbox to center content inside */
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            width: 100%;
-            max-width: 600px; /* Limit max width */
-            text-align: center;
-            box-sizing: border-box;
+            max-width: 500px; /* Max width for content box */
+            width: 100%; /* Full width up to max-width */
         }
 
-
-        #welcome-screen {
-            /* This div now holds all the content */
-             display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%; /* Ensure it takes full width of container */
-        }
-
-        /* Responsive font sizes for welcome h1 */
-        #welcome-screen h1 {
-            font-size: 3rem; /* text-5xl for mobile */
+        h1 {
+            font-size: 2.5rem; /* text-4xl */
             font-weight: bold;
             color: #a78bfa; /* purple-400 */
-            margin-bottom: 1rem; /* Adjusted margin */
-        }
-        @media (min-width: 640px) { /* sm breakpoint */
-            #welcome-screen h1 {
-                font-size: 3.75rem; /* text-6xl equivalent */
-            }
+            margin-bottom: 1rem;
         }
 
-
-        /* Responsive font sizes for welcome p */
-        #welcome-screen p {
-            font-size: 1.125rem; /* text-lg for mobile */
+        p {
+            font-size: 1.125rem; /* text-lg */
             color: #d1d5db; /* gray-300 */
-            margin-bottom: 2rem; /* Space below description */
-            max-width: 500px; /* Limit width for readability */
-        }
-        @media (min-width: 640px) { /* sm breakpoint */
-            #welcome-screen p {
-                font-size: 1.25rem; /* text-xl equivalent */
-            }
+            margin-bottom: 2rem;
+            text-align: center;
         }
 
-
-        /* Container for the game mode buttons */
         .game-modes {
             display: flex;
-            flex-direction: column; /* Stack buttons vertically on small screens */
+            flex-direction: column; /* Stack buttons vertically by default */
             gap: 1rem; /* Space between buttons */
-            width: 100%; /* Take full width */
-            max-width: 300px; /* Limit button container width */
-            margin-top: 1rem; /* Space above buttons */
+            width: 100%; /* Ensure buttons take full width of container */
+            max-width: 300px; /* Max width for button column */
         }
 
-        /* Styling for game mode buttons (Apply to anchor tags within game-modes) */
         .game-modes a {
-            background-color: #8b5cf6; /* purple-600 */
+            background-color: #8b5cf6; /* purple-500 */
             color: white;
-            font-weight: 600; /* font-semibold */
-            padding: 0.75rem 1.5rem; /* py-3 px-6 for mobile */
+            padding: 1rem 1.5rem; /* py-3 px-6 */
             border-radius: 0.5rem; /* rounded-lg */
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.05); /* shadow-md */
+            text-decoration: none;
+            font-weight: 600; /* font-semibold */
+            text-align: center;
             transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
-            font-size: 1.125rem; /* text-lg for mobile */
-            text-decoration: none; /* Remove underline from link */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             display: inline-block; /* Allow padding and transform */
              width: 100%; /* Make buttons take full width of their container */
              box-sizing: border-box; /* Include padding in width */
-        }
-        @media (min-width: 640px) { /* sm breakpoint */
-            .game-modes a {
-                padding: 1rem 2rem; /* py-4 px-8 equivalent for sm+ */
-                font-size: 1.25rem; /* text-xl equivalent for sm+ */
-            }
         }
 
 
@@ -140,7 +105,8 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            console.log('Welcome Page Loaded');
+            // Any JavaScript for the welcome screen can go here
+            // Currently, no dynamic behavior is needed for this simple menu.
         });
     </script>
 </body>
