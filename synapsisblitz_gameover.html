@@ -29,73 +29,108 @@
             display: flex; /* Use flexbox to center content inside */
             flex-direction: column;
             align-items: center;
-            max-width: 500px; /* Max width for content box */
-            width: 100%; /* Full width up to max-width */
+            justify-content: center;
+            width: 100%;
+            max-width: 600px; /* Limit max width */
+            text-align: center;
+            box-sizing: border-box;
         }
 
-        /* Style for the game over message (always game over in blitz) */
-        .gameover-message {
-            font-size: 2.5rem; /* text-3xl */
+        #game-over-screen {
+             /* Content inside the content-box */
+        }
+
+        /* Responsive font sizes for game over message */
+        #game-over-message {
+            font-size: 2.5rem; /* Default for mobile, will be text-4xl below */
             font-weight: bold;
-            color: #ef4444; /* red-500 */
             margin-bottom: 1rem;
+            color: #ef4444; /* red-500 - Game Over color */
+        }
+        @media (min-width: 640px) { /* sm breakpoint */
+            #game-over-message {
+                font-size: 3rem; /* text-5xl equivalent */
+            }
         }
 
-        /* Button styling - consistent with other pages */
-        .button {
-            display: inline-block;
-            background-color: #8b5cf6; /* purple-500 */
+
+        /* Responsive font sizes for final points display */
+        #final-points-display {
+            font-size: 1.5rem; /* Default for mobile, will be text-xl below */
+            margin-bottom: 2rem;
+        }
+        @media (min-width: 640px) { /* sm breakpoint */
+            #final-points-display {
+                font-size: 1.875rem; /* text-2xl equivalent */
+            }
+        }
+
+
+        #game-over-screen a { /* Styling for buttons/links */
+            background-color: #8b5cf6; /* purple-600 */
             color: white;
+            font-weight: 600; /* font-semibold */
             padding: 0.75rem 1.5rem; /* py-3 px-6 */
             border-radius: 0.5rem; /* rounded-lg */
-            text-decoration: none;
-            font-weight: 600; /* font-semibold */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
             transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
-            margin-top: 1.5rem; /* mt-6 */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 0.5rem;
+            text-decoration: none; /* Remove underline from link */
+            display: inline-block; /* Allow padding and transform */
         }
 
-        .button:hover {
+        #game-over-screen a:hover {
             background-color: #7c3aed; /* purple-700 */
             transform: scale(1.05);
         }
 
-        /* Style for personal best display */
+         /* Styling for Personal Best display */
         #personal-best-container {
-            font-size: 1.125rem; /* text-lg */
-            color: #d1d5db; /* gray-300 */
-            margin-top: 1rem; /* Added margin top for spacing */
-            font-weight: normal; /* Override bold if coming from points display */
+            position: fixed;
+            top: 10px; /* Align with the top */
+            right: 10px; /* Position on the right */
+            left: auto; /* Remove left positioning */
+            z-index: 20;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 8px 12px;
+            border-radius: 8px;
+            background-color: #8b5cf6; /* Darker purple background */
+            color: #ffffff; /* White text color */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        #personal-best-value {
-            font-weight: bold;
-            color: #34d399; /* green-400 */
-        }
+         /* Style for the personal best value span */
+         #personal-best-container span {
+             color: #ffffff; /* Default white color for the number */
+         }
+
     </style>
 </head>
 <body>
+    <div id="personal-best-container">
+        Personal Best: <span id="personal-best-points">0</span>
+    </div>
+
     <div class="content-box">
-        <h1 class="gameover-message">Time's Up!</h1>
-        <p class="text-xl sm:text-2xl text-gray-300 mb-2">Final Points: <span id="final-points" class="font-bold text-purple-400">0</span></p>
-
-        <div id="personal-best-container">
-            Your Personal Best: <span id="personal-best-value">0</span>
+        <div id="game-over-screen">
+            <h2 id="game-over-message">Game Over!</h2> <p id="final-points-display">Your final points were: <span id="final-points">0</span></p>
+            <a href="synapsisblitz.html" id="play-again-button">Play Again (Blitz)</a> <a href="synapsisindex.html" id="return-to-menu-button-gameover">Return to Main Menu</a>
         </div>
-
-        <a href="synapsisblitz.html" class="button">Play Again (Blitz)</a>
-        <a href="synapsisindex.html" class="button">Back to Main Menu</a>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Get references to DOM elements
             const finalPointsElement = document.getElementById('final-points');
-            const personalBestElement = document.getElementById('personal-best-value');
+            const personalBestElement = document.getElementById('personal-best-points'); // Get personal best span
+
+            // Key for local storage
             const PERSONAL_BEST_STORAGE_KEY = 'synapsisBlitzPersonalBest';
 
-            // Get points from the URL query parameters
+            // Get final points from the URL query parameters
             const urlParams = new URLSearchParams(window.location.search);
-            const finalPoints = parseInt(urlParams.get('points') || 0, 10);
+            const finalPoints = parseInt(urlParams.get('points') || 0, 10); // Ensure points are parsed as integer
 
             console.log('Blitz Game Over Page Loaded');
             console.log('Final points from URL:', finalPoints);
@@ -103,7 +138,9 @@
             // Display final points
             finalPointsElement.textContent = finalPoints;
 
-            // Function to load personal best from local storage
+            // --- Personal Best Logic ---
+
+            // Load personal best from local storage
             function loadPersonalBest() {
                 const personalBest = localStorage.getItem(PERSONAL_BEST_STORAGE_KEY);
                 // Parse as integer, default to 0 if not found or invalid
