@@ -19,318 +19,191 @@
             box-sizing: border-box;
         }
 
-        *, *::before, *::after {
-            box-sizing: inherit;
+        /* Utility classes for animations and custom styles */
+        .animated-gradient-border {
+            border: 3px solid;
+            border-image: linear-gradient(to right, #6EE7B7, #3B82F6, #9333EA) 1;
+            animation: gradient-border-animation 3s linear infinite;
         }
 
-        /* --- Font Styles --- */
-        .font-oi {
-            font-family: 'Oi', cursive;
-        }
-        .font-readable {
-             font-family: 'Quicksand', sans-serif;
-             font-weight: 400;
+        @keyframes gradient-border-animation {
+            to {
+                border-image-source: linear-gradient(to right, #9333EA, #6EE7B7, #3B82F6);
+            }
         }
 
-        /* --- Color Palette --- */
-        .text-cerulean { color: #007BA7; }
-        .text-accent-orange { color: #FF8C00; }
-        .text-accent-pink { color: #E91E63; }
-        .text-accent-yellow { color: #FFD700; }
-
-        /* --- Decorative Doodles --- */
-        .doodle {
-            position: absolute;
-            opacity: 0.4;
-            pointer-events: none;
-            z-index: 0;
+        .hover-lift {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
-        .doodle-color-orange svg { stroke: #FF8C00; }
-        .doodle-color-yellow svg { stroke: #FFD700; }
-        .doodle-color-pink svg { stroke: #E91E63; }
 
-        /* --- Neo-Brutalist Button Style --- */
-        .neo-btn {
-            border: 2px solid #007BA7;
-            box-shadow: 4px 4px 0px #005b7d;
-            transition: all 0.15s ease-out;
-            display: flex;
-            justify-content: center;
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .icon-link {
+            transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .icon-link:hover {
+            color: #6EE7B7; /* Tailwind emerald-300 */
+            transform: scale(1.1);
+        }
+
+        .project-card {
+            background-color: #2a2a2a; /* Slightly lighter dark grey */
+            border-radius: 0.75rem; /* rounded-xl */
+            padding: 1.5rem; /* p-6 */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary {
+            display: inline-flex;
             align-items: center;
-            text-align: center;
-            padding: 0;
+            justify-content: center;
+            padding: 0.75rem 1.5rem; /* py-3 px-6 */
+            border-radius: 9999px; /* rounded-full */
+            background-color: #8B5CF6; /* Tailwind violet-500 */
+            color: #ffffff; /* text-white */
+            font-weight: 600; /* font-semibold */
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+            text-decoration: none;
         }
-        .neo-btn:hover {
-            transform: translate(2px, 2px);
-            box-shadow: 2px 2px 0px #005b7d;
-            border-color: #FFD700;
+
+        .btn-primary:hover {
+            background-color: #7c3aed; /* Tailwind violet-600 */
+            transform: translateY(-2px);
         }
-        .neo-btn:active {
-            transform: translate(4px, 4px);
-            box-shadow: 0px 0px 0px #005b7d;
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem; /* py-3 px-6 */
+            border-radius: 9999px; /* rounded-full */
+            background-color: #3b82f6; /* Tailwind blue-500 */
+            color: #ffffff; /* text-white */
+            font-weight: 600; /* font-semibold */
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+            text-decoration: none;
         }
+
+        .btn-secondary:hover {
+            background-color: #2563eb; /* Tailwind blue-600 */
+            transform: translateY(-2px);
+        }
+
         .btn-content {
             display: flex;
-            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            padding: 0.75rem; /* Base padding */
-            width: 100%;
-            height: 100%;
+            gap: 0.5rem; /* space-x-2 */
         }
-        .btn-content i {
+
+        .text-accent-yellow {
+            color: #FBBF24; /* Tailwind amber-400 */
+        }
+
+        .game-box {
+            background-color: #2a2a2a;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .game-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .game-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #6EE7B7; /* Emerald-300 */
             margin-bottom: 0.5rem;
         }
 
-        /* --- Responsive Game Box Layout --- */
-        .game-box {
-            border: 2px solid #007BA7;
-            box-shadow: 4px 4px 0px #005b7d;
+        .game-description {
+            color: #9ca3af; /* Gray-400 */
+            margin-bottom: 1rem;
+        }
+
+        .game-button {
+            display: inline-block;
+            padding: 0.5rem 1rem;
             border-radius: 0.5rem;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 1.5rem;
-            background-color: #2a2a2a;
-            width: 100%;
+            background-color: #3B82F6; /* Blue-500 */
+            color: #ffffff;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s ease-in-out;
         }
-        .game-box .game-title {
-             font-family: 'Oi', cursive;
-             color: #007BA7;
-             font-size: 1.8rem;
-             margin-bottom: 0.8rem;
-             text-align: center;
-             width: 100%;
+
+        .game-button:hover {
+            background-color: #2563eb; /* Blue-600 */
         }
-        .game-box .game-description {
-             font-family: 'Quicksand', sans-serif;
-             color: #e0e0e0;
-             font-size: 1rem;
-             text-align: center;
-             margin-bottom: 1.2rem;
-             flex-grow: 1;
-           }
-           .game-box .game-button {
-             background-color: #007BA7;
-             color: white;
-             border: none;
-             text-decoration: none;
-             padding: 0.8rem 1.25rem;
-             font-size: 1.1rem;
-             text-align: center;
-             box-shadow: 2px 2px 0px #005b7d;
-             transition: all 0.15s ease-out;
-             font-family: 'Inter', sans-serif;
-             display: flex;
-             align-items: center;
-             justify-content: center;
-             width: 100%;
-             max-width: 280px;
-             border-radius: 0.5rem;
-           }
-           .game-box .game-button:hover {
-             transform: translate(1px, 1px);
-             box-shadow: 1px 1px 0px #005b7d;
-             background-color: #005b7d;
-           }
-           .game-box .game-button:active {
-             transform: translate(2px, 2px);
-             box-shadow: 0px 0px 0px #005b7d;
-           }
     </style>
 </head>
-<body>
-    <section class="flex flex-col justify-center items-center py-32 sm:py-32 md:min-h-screen px-4 relative">
-        <div class="doodle doodle-color-orange top-1/4 left-8 w-20 h-20 hidden md:block"><svg class="w-full h-full" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="50" r="40"/><path d="M20 50 L80 50 M50 20 L50 80"/></svg></div>
-        <div class="doodle doodle-color-yellow bottom-1/4 right-8 w-16 h-16 hidden md:block"><svg class="w-full h-full" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="10" width="80" height="80" rx="10"/><path d="M30 30 L70 70 M70 30 L30 70"/></svg></div>
-        <div class="doodle doodle-color-pink top-16 right-1/4 w-24 h-24 hidden md:block"><svg class="w-full h-full" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M50 10 L90 50 L50 90 L10 50 Z"/><path d="M50 10 L50 90 M10 50 L90 50"/></svg></div>
+<body class="antialiased leading-relaxed">
+    <header class="text-center py-12 px-4">
+        <img src="https://rishi.pro/profile_pic.png" alt="Rishi Prasad" class="mx-auto rounded-full w-32 h-32 md:w-40 md:h-40 mb-4 shadow-lg animated-gradient-border">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-100 mb-2 font-['Oi']">Rishi Prasad</h1>
+        <p class="text-xl sm:text-2xl text-gray-300">Innovating at the intersection of <span class="text-accent-yellow">code</span>, <span class="text-accent-yellow">creativity</span>, and <span class="text-accent-yellow">community</span>.</p>
+    </header>
 
-
-        <div class="max-w-4xl w-full text-center relative z-10 p-4 sm:p-6 bg-gray-900 bg-opacity-70 rounded-xl shadow-lg border border-gray-700">
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold font-oi text-cerulean mb-4 sm:mb-6 leading-tight">
-                Hi, I'm Rishi Prasad!
-            </h1>
-            <p class="text-lg sm:text-xl md:text-2xl font-readable text-gray-300 mb-6 sm:mb-8 max-w-2xl mx-auto">
-                A <span class="text-accent-yellow font-bold">Full Stack Developer</span> and <span class="text-accent-pink font-bold">AI Enthusiast</span> passionate about crafting innovative solutions and bringing ideas to life.
-            </p>
-
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 justify-center max-w-2xl mx-auto">
-                <div class="flex justify-center">
-                    <a href="#about" class="neo-btn bg-cerulean text-white rounded-lg w-full max-w-[150px] aspect-square">
-                        <div class="btn-content">
-                            <i class="fas fa-user text-3xl sm:text-4xl"></i><span>About Me</span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="flex justify-center">
-                    <a href="#projects" class="neo-btn bg-accent-orange text-white rounded-lg w-full max-w-[150px] aspect-square">
-                        <div class="btn-content">
-                            <i class="fas fa-hammer text-3xl sm:text-4xl"></i><span>Projects</span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="flex justify-center">
-                    <a href="#resume" class="neo-btn bg-accent-pink text-white rounded-lg w-full max-w-[150px] aspect-square">
-                        <div class="btn-content">
-                            <i class="fas fa-file-alt text-3xl sm:text-4xl"></i><span>Resume</span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="flex justify-center">
-                    <a href="#contact" class="neo-btn bg-cerulean text-white rounded-lg w-full max-w-[150px] aspect-square">
-                        <div class="btn-content">
-                            <i class="fas fa-envelope text-3xl sm:text-4xl"></i><span>Contact</span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="py-16 px-4 bg-gray-800 text-center relative z-10">
-        <h2 class="text-3xl sm:text-4xl font-bold text-accent-yellow mb-8">About Me</h2>
-        <div class="max-w-3xl mx-auto bg-gray-900 p-6 sm:p-8 rounded-xl shadow-lg border border-gray-700">
-            <p class="text-lg text-gray-300 leading-relaxed">
-                Hello! I'm Rishi Prasad, a passionate Full Stack Developer with a keen interest in Artificial Intelligence.
-                I thrive on transforming complex problems into elegant, user-friendly solutions.
-                My journey in tech began with a fascination for how software can enhance our lives, leading me to dive deep into both front-end and back-end development.
-            </p>
-            <p class="text-lg text-gray-300 leading-relaxed mt-4">
-                I specialize in building robust and scalable web applications, leveraging modern frameworks and technologies.
-                Beyond coding, I'm captivated by the potential of AI to revolutionize industries and everyday experiences.
-                I'm constantly exploring new tools and techniques to stay at the forefront of technological advancements.
-                My goal is to create impactful products that are not only functional but also intuitive and engaging.
-            </p>
-            <p class="text-lg text-gray-300 leading-relaxed mt-4">
-                When I'm not coding, you can find me exploring the latest AI research, contributing to open-source projects,
-                or enjoying a good book. I'm always eager to connect with fellow tech enthusiasts and collaborate on exciting ventures!
-            </p>
-        </div>
-    </section>
-
-    <section id="projects" class="py-16 px-4 bg-gray-900 text-center relative z-10">
-        <h2 class="text-3xl sm:text-4xl font-bold text-accent-pink mb-8">My Projects</h2>
-        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-
-            <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 flex flex-col justify-between items-center text-center">
-                <h3 class="text-2xl font-bold text-cerulean mb-3">E-commerce Platform</h3>
-                <p class="text-gray-300 mb-4 flex-grow">
-                    A full-stack e-commerce solution with user authentication, product catalog, shopping cart, and order processing.
-                    Features a responsive design and secure payment integration.
-                </p>
-                <div class="flex flex-wrap justify-center gap-2 mb-4">
-                    <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">React</span>
-                    <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">Node.js</span>
-                    <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">Express</span>
-                    <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">MongoDB</span>
-                    <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">Stripe API</span>
-                </div>
-                <a href="#" class="neo-btn bg-accent-orange text-white py-2 px-5 rounded-lg flex items-center justify-center">
-                    <i class="fas fa-external-link-alt mr-2"></i> View Project
-                </a>
-            </div>
-
-            <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 flex flex-col justify-between items-center text-center">
-                <h3 class="text-2xl font-bold text-cerulean mb-3">AI-Powered Chatbot</h3>
-                <p class="text-gray-300 mb-4 flex-grow">
-                    A conversational AI chatbot integrated into a web application, capable of natural language understanding
-                    and generating human-like responses for customer support.
-                </p>
-                <div class="flex flex-wrap justify-center gap-2 mb-4">
-                    <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">Python</span>
-                    <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">Flask</span>
-                    <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">GPT-3</span>
-                    <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">NLP</span>
-                </div>
-                <a href="#" class="neo-btn bg-accent-orange text-white py-2 px-5 rounded-lg flex items-center justify-center">
-                    <i class="fas fa-external-link-alt mr-2"></i> View Project
-                </a>
-            </div>
-
-            <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 flex flex-col justify-between items-center text-center">
-                <h3 class="text-2xl font-bold text-cerulean mb-3">Portfolio Website</h3>
-                <p class="text-gray-300 mb-4 flex-grow">
-                    My personal portfolio showcasing my skills, projects, and resume. Designed with a
-                    modern, responsive UI using Tailwind CSS.
-                </p>
-                <div class="flex flex-wrap justify-center gap-2 mb-4">
-                    <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">HTML</span>
-                    <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">CSS</span>
-                    <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">JavaScript</span>
-                    <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">Tailwind CSS</span>
-                </div>
-                <a href="#" class="neo-btn bg-accent-orange text-white py-2 px-5 rounded-lg flex items-center justify-center">
-                    <i class="fas fa-external-link-alt mr-2"></i> View Project
-                </a>
-            </div>
-
-            <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 flex flex-col justify-between items-center text-center">
-                <h3 class="text-2xl font-bold text-cerulean mb-3">Data Visualization Dashboard</h3>
-                <p class="text-gray-300 mb-4 flex-grow">
-                    An interactive dashboard for visualizing complex datasets, providing insights
-                    through various charts and graphs.
-                </p>
-                <div class="flex flex-wrap justify-center gap-2 mb-4">
-                    <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">Python</span>
-                    <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">Dash</span>
-                    <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">Plotly</span>
-                    <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">Pandas</span>
-                </div>
-                <a href="#" class="neo-btn bg-accent-orange text-white py-2 px-5 rounded-lg flex items-center justify-center">
-                    <i class="fas fa-external-link-alt mr-2"></i> View Project
-                </a>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="resume" class="py-16 px-4 bg-gray-800 text-center relative z-10">
-        <h2 class="text-3xl sm:text-4xl font-bold text-accent-yellow mb-8">My Resume</h2>
-        <div class="max-w-3xl mx-auto bg-gray-900 p-6 sm:p-8 rounded-xl shadow-lg border border-gray-700">
-            <p class="text-lg text-gray-300 mb-6">
-                You can download my full resume by clicking the button below.
-            </p>
-            <a href="path/to/your/resume.pdf" download="Rishi_Prasad_Resume.pdf" class="neo-btn bg-accent-pink text-white py-3 px-8 rounded-lg text-xl">
-                <i class="fas fa-download mr-3"></i> Download Resume
-            </a>
-        </div>
-    </section>
-
-    <section id="contact" class="py-16 px-4 bg-gray-900 text-center relative z-10">
-        <h2 class="text-3xl sm:text-4xl font-bold text-accent-orange mb-8">Get In Touch</h2>
-        <div class="max-w-3xl mx-auto bg-gray-800 p-6 sm:p-8 rounded-xl shadow-lg border border-gray-700">
-            <p class="text-lg text-gray-300 mb-6">
-                I'm always open to new opportunities and collaborations. Feel free to reach out!
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                <a href="mailto:your.email@example.com" class="neo-btn bg-cerulean text-white py-3 px-6 rounded-lg flex items-center justify-center w-full sm:w-auto">
-                    <i class="fas fa-envelope mr-3"></i> Email Me
-                </a>
-                <a href="https://linkedin.com/in/yourprofile" target="_blank" class="neo-btn bg-cerulean text-white py-3 px-6 rounded-lg flex items-center justify-center w-full sm:w-auto">
-                    <i class="fab fa-linkedin mr-3"></i> LinkedIn
-                </a>
-                <a href="https://github.com/yourusername" target="_blank" class="neo-btn bg-cerulean text-white py-3 px-6 rounded-lg flex items-center justify-center w-full sm:w-auto">
-                    <i class="fab fa-github mr-3"></i> GitHub
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section id="games" class="py-16 px-4 bg-gray-800 text-center relative z-10">
-        <div class="max-w-4xl mx-auto bg-gray-900 p-6 sm:p-8 rounded-xl shadow-lg border border-gray-700">
+    <section class="py-12 px-4 max-w-7xl mx-auto">
+        <div class="bg-gray-800/50 rounded-xl p-8 md:p-12 shadow-xl backdrop-blur-sm">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
                 <div class="md:col-span-1 space-y-8">
-                    <h3 class="text-2xl lg:text-3xl font-semibold text-gray-100 flex items-center justify-center"><i class="fas fa-file-alt text-accent-yellow mr-3 text-3xl lg:text-4xl"></i> My Documents</h3>
-                    <a href="path/to/your/resume.pdf" download="Rishi_Prasad_Resume.pdf" class="neo-btn bg-accent-pink text-white py-3 px-8 rounded-lg text-xl flex flex-col sm:flex-row items-center justify-center w-full">
+                    <h2 class="text-3xl lg:text-4xl font-semibold text-gray-100 flex items-center justify-center"><i class="fas fa-user-circle text-accent-yellow mr-3 text-4xl lg:text-5xl"></i> About Me</h2>
+                    <p class="text-gray-300 leading-relaxed">
+                        I'm a passionate Full Stack Developer and a creative problem-solver based in Coimbatore, India. I specialize in crafting robust web applications with a keen eye for detail and user experience. When I'm not coding, you can find me exploring new technologies, contributing to open-source, or indulging in a good book.
+                    </p>
+                    <a href="https://rishi.pro/about" target="_blank" class="btn-primary hover-lift">
                         <div class="btn-content">
-                            <i class="fas fa-download text-3xl sm:text-4xl"></i><span>Resume</span>
+                            <i class="fas fa-info-circle text-xl sm:text-2xl"></i><span>Learn More</span>
                         </div>
                     </a>
-                    <a href="path/to/your/book.pdf" target="_blank" class="neo-btn bg-cerulean text-white py-3 px-8 rounded-lg text-xl flex flex-col sm:flex-row items-center justify-center w-full">
+                </div>
+
+                <div class="md:col-span-2 space-y-8 pt-8 md:pt-0">
+                    <h3 class="text-2xl lg:text-3xl font-semibold text-gray-100 flex items-center justify-center"><i class="fas fa-laptop-code text-accent-yellow mr-3 text-3xl lg:text-4xl"></i> My Projects</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                        <div class="project-card hover-lift">
+                            <h4 class="text-xl font-semibold text-gray-100 mb-2">Project Stellar</h4>
+                            <p class="text-gray-400 text-sm mb-4">A scalable e-commerce platform built with Node.js, React, and MongoDB.</p>
+                            <a href="https://rishi.pro/stellar" target="_blank" class="btn-secondary">View Project</a>
+                        </div>
+                        <div class="project-card hover-lift">
+                            <h4 class="text-xl font-semibold text-gray-100 mb-2">MediManage AI</h4>
+                            <p class="text-gray-400 text-sm mb-4">An AI-powered medical diagnosis assistant integrated with EHR systems.</p>
+                            <a href="https://rishi.pro/medimanage" target="_blank" class="btn-secondary">View Project</a>
+                        </div>
+                    </div>
+                    <div class="text-center pt-4">
+                        <a href="https://rishi.pro/projects" target="_blank" class="btn-primary hover-lift">
+                            <div class="btn-content">
+                                <i class="fas fa-list-alt text-xl sm:text-2xl"></i><span>All Projects</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="md:col-span-1 space-y-8 pt-8">
+                    <h3 class="text-2xl lg:text-3xl font-semibold text-gray-100 flex items-center justify-center"><i class="fas fa-envelope text-accent-yellow mr-3 text-3xl lg:text-4xl"></i> Connect</h3>
+                    <div class="flex justify-center space-x-6 text-gray-300 text-4xl">
+                        <a href="https://github.com/yourusername" target="_blank" class="icon-link"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/yourusername" target="_blank" class="icon-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:your.email@example.com" class="icon-link"><i class="fas fa-envelope"></i></a>
+                    </div>
+                    <a href="https://rishi.pro/book-a-meeting" target="_blank" class="btn-secondary hover-lift">
                         <div class="btn-content">
                             <i class="fas fa-external-link-alt text-3xl sm:text-4xl"></i><span>Book</span>
                         </div>
@@ -343,7 +216,7 @@
                         <div class="game-box">
                              <h4 class="game-title">Synapsis</h4>
                              <p class="game-description">A fun game where you guess products based on their business descriptions.</p>
-                             <a href="./Synapsis/synapsisindex.html" class="game-button">Play Synapsis</a>
+                             <a href="synapsisindex.html" class="game-button">Play Synapsis</a>
                         </div>
                     </div>
                 </div>
