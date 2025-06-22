@@ -78,6 +78,7 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             font-size: 1.2rem; /* Match timer font size */
             font-weight: bold; /* Match timer font weight */
+             /* Removed Tailwind classes from HTML to manage styling purely in CSS */
         }
 
         #timer-container { /* Timer container */
@@ -491,7 +492,7 @@
                 clearInterval(timerInterval); // Ensure timer is stopped
 
                 // Redirect to the game over page, passing the points.
-                window.location.href = `./synapsisblitz_gameover.html?points=${points}`;
+                window.location.href = `blitz_gameover.html?points=${points}`;
             }
 
 
