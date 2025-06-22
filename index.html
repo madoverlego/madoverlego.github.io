@@ -2,16 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- This tag is crucial for responsive design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🔆 Hi, I'm Rishi Prasad!</title>
-    <!-- Tailwind CSS for responsive utility classes -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oi&family=Inter:wght@400;600;700&family=Comfortaa:wght@400;700&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* --- Base and Custom Styles --- */
@@ -142,65 +138,205 @@
              transform: translate(2px, 2px);
              box-shadow: 0px 0px 0px #005b7d;
            }
-
     </style>
 </head>
 <body>
-
-    <!-- Hero Section with responsive padding -->
     <section class="flex flex-col justify-center items-center py-32 sm:py-32 md:min-h-screen px-4 relative">
-        <!-- Background Doodles (Hidden on small screens to prevent overlap) -->
-        <div class="doodle doodle-color-orange top-1/4 left-8 w-20 h-20 hidden md:block"><svg class="w-full h-full" viewBox="0 0 100 100" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 50 Q 20 20, 30 50 T 50 50 Q 60 80, 70 50 T 90 50"></path></svg></div>
-        <div class="doodle doodle-color-yellow top-1/2 left-12 w-14 h-28 hidden lg:block"><svg class="w-full h-full" viewBox="0 0 50 100" fill="none" stroke-width="3"><path d="M10 10 L40 30 L10 50 L40 70 L10 90" /></svg></div>
-        <div class="doodle doodle-color-orange top-1/3 right-20 w-8 h-8 hidden md:block"><svg class="w-full h-full" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 L15.09 8.09 L22 9.27 L17 14 L18.18 21.02 L12 17.77 L5.82 21.02 L7 14 L2 9.27 L8.91 8.09 L12 2 z" /></svg></div>
-        
-        <div class="text-center max-w-3xl z-10 px-2">
-            <!-- Responsive Font Sizes (now using text-4xl for mobile, and scaling up) -->
-            <h1 class="font-oi text-cerulean text-4xl sm:text-5xl md:text-6xl mb-6 relative">
+        <div class="doodle doodle-color-orange top-1/4 left-8 w-20 h-20 hidden md:block"><svg class="w-full h-full" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="50" r="40"/><path d="M20 50 L80 50 M50 20 L50 80"/></svg></div>
+        <div class="doodle doodle-color-yellow bottom-1/4 right-8 w-16 h-16 hidden md:block"><svg class="w-full h-full" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="10" width="80" height="80" rx="10"/><path d="M30 30 L70 70 M70 30 L30 70"/></svg></div>
+        <div class="doodle doodle-color-pink top-16 right-1/4 w-24 h-24 hidden md:block"><svg class="w-full h-full" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M50 10 L90 50 L50 90 L10 50 Z"/><path d="M50 10 L50 90 M10 50 L90 50"/></svg></div>
+
+
+        <div class="max-w-4xl w-full text-center relative z-10 p-4 sm:p-6 bg-gray-900 bg-opacity-70 rounded-xl shadow-lg border border-gray-700">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold font-oi text-cerulean mb-4 sm:mb-6 leading-tight">
                 Hi, I'm Rishi Prasad!
             </h1>
-            <p class="font-readable text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed">
-                I’m into art, math, coding, and MUN,<br> and I like building projects that push my limits.
+            <p class="text-lg sm:text-xl md:text-2xl font-readable text-gray-300 mb-6 sm:mb-8 max-w-2xl mx-auto">
+                A <span class="text-accent-yellow font-bold">Full Stack Developer</span> and <span class="text-accent-pink font-bold">AI Enthusiast</span> passionate about crafting innovative solutions and bringing ideas to life.
+            </p>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 justify-center max-w-2xl mx-auto">
+                <div class="flex justify-center">
+                    <a href="#about" class="neo-btn bg-cerulean text-white rounded-lg w-full max-w-[150px] aspect-square">
+                        <div class="btn-content">
+                            <i class="fas fa-user text-3xl sm:text-4xl"></i><span>About Me</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="flex justify-center">
+                    <a href="#projects" class="neo-btn bg-accent-orange text-white rounded-lg w-full max-w-[150px] aspect-square">
+                        <div class="btn-content">
+                            <i class="fas fa-hammer text-3xl sm:text-4xl"></i><span>Projects</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="flex justify-center">
+                    <a href="#resume" class="neo-btn bg-accent-pink text-white rounded-lg w-full max-w-[150px] aspect-square">
+                        <div class="btn-content">
+                            <i class="fas fa-file-alt text-3xl sm:text-4xl"></i><span>Resume</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="flex justify-center">
+                    <a href="#contact" class="neo-btn bg-cerulean text-white rounded-lg w-full max-w-[150px] aspect-square">
+                        <div class="btn-content">
+                            <i class="fas fa-envelope text-3xl sm:text-4xl"></i><span>Contact</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-16 px-4 bg-gray-800 text-center relative z-10">
+        <h2 class="text-3xl sm:text-4xl font-bold text-accent-yellow mb-8">About Me</h2>
+        <div class="max-w-3xl mx-auto bg-gray-900 p-6 sm:p-8 rounded-xl shadow-lg border border-gray-700">
+            <p class="text-lg text-gray-300 leading-relaxed">
+                Hello! I'm Rishi Prasad, a passionate Full Stack Developer with a keen interest in Artificial Intelligence.
+                I thrive on transforming complex problems into elegant, user-friendly solutions.
+                My journey in tech began with a fascination for how software can enhance our lives, leading me to dive deep into both front-end and back-end development.
+            </p>
+            <p class="text-lg text-gray-300 leading-relaxed mt-4">
+                I specialize in building robust and scalable web applications, leveraging modern frameworks and technologies.
+                Beyond coding, I'm captivated by the potential of AI to revolutionize industries and everyday experiences.
+                I'm constantly exploring new tools and techniques to stay at the forefront of technological advancements.
+                My goal is to create impactful products that are not only functional but also intuitive and engaging.
+            </p>
+            <p class="text-lg text-gray-300 leading-relaxed mt-4">
+                When I'm not coding, you can find me exploring the latest AI research, contributing to open-source projects,
+                or enjoying a good book. I'm always eager to connect with fellow tech enthusiasts and collaborate on exciting ventures!
             </p>
         </div>
     </section>
 
-    <!-- Work Section -->
-    <section class="py-16 sm:py-20 px-4 sm:px-6 bg-gray-800/30">
-        <div class="container mx-auto max-w-5xl">
-            <h2 class="text-cerulean text-3xl sm:text-4xl md:text-5xl mb-12 sm:mb-16 relative text-center">Explore My Work</h2>
-            <!-- Grid layout with responsive gap -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-y-12 md:gap-x-12 md:gap-y-16">
-                <!-- Work Item: Projects -->
-                <div class="flex flex-col items-center text-center md:flex-row md:text-left gap-6">
-                    <div class="flex-grow space-y-3">
-                        <h3 class="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-100 flex items-center justify-center md:justify-start">
-                            <i class="fas fa-code text-accent-orange mr-3 text-2xl lg:text-3xl"></i> Projects & Code
-                        </h3>
-                        <p class="text-gray-400 text-sm sm:text-base lg:text-lg px-2 sm:px-0">Dive into the code and see what I've been building on Github.</p>
-                    </div>
-                    <a href="https://github.com/madoverlego" target="_blank" rel="noopener noreferrer" class="neo-btn flex-shrink-0 w-full max-w-[220px] h-24 sm:h-28 bg-cerulean text-white font-semibold rounded-lg text-lg">
+    <section id="projects" class="py-16 px-4 bg-gray-900 text-center relative z-10">
+        <h2 class="text-3xl sm:text-4xl font-bold text-accent-pink mb-8">My Projects</h2>
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 flex flex-col justify-between items-center text-center">
+                <h3 class="text-2xl font-bold text-cerulean mb-3">E-commerce Platform</h3>
+                <p class="text-gray-300 mb-4 flex-grow">
+                    A full-stack e-commerce solution with user authentication, product catalog, shopping cart, and order processing.
+                    Features a responsive design and secure payment integration.
+                </p>
+                <div class="flex flex-wrap justify-center gap-2 mb-4">
+                    <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">React</span>
+                    <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">Node.js</span>
+                    <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">Express</span>
+                    <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">MongoDB</span>
+                    <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">Stripe API</span>
+                </div>
+                <a href="#" class="neo-btn bg-accent-orange text-white py-2 px-5 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-external-link-alt mr-2"></i> View Project
+                </a>
+            </div>
+
+            <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 flex flex-col justify-between items-center text-center">
+                <h3 class="text-2xl font-bold text-cerulean mb-3">AI-Powered Chatbot</h3>
+                <p class="text-gray-300 mb-4 flex-grow">
+                    A conversational AI chatbot integrated into a web application, capable of natural language understanding
+                    and generating human-like responses for customer support.
+                </p>
+                <div class="flex flex-wrap justify-center gap-2 mb-4">
+                    <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">Python</span>
+                    <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">Flask</span>
+                    <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">GPT-3</span>
+                    <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">NLP</span>
+                </div>
+                <a href="#" class="neo-btn bg-accent-orange text-white py-2 px-5 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-external-link-alt mr-2"></i> View Project
+                </a>
+            </div>
+
+            <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 flex flex-col justify-between items-center text-center">
+                <h3 class="text-2xl font-bold text-cerulean mb-3">Portfolio Website</h3>
+                <p class="text-gray-300 mb-4 flex-grow">
+                    My personal portfolio showcasing my skills, projects, and resume. Designed with a
+                    modern, responsive UI using Tailwind CSS.
+                </p>
+                <div class="flex flex-wrap justify-center gap-2 mb-4">
+                    <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">HTML</span>
+                    <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">CSS</span>
+                    <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">JavaScript</span>
+                    <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">Tailwind CSS</span>
+                </div>
+                <a href="#" class="neo-btn bg-accent-orange text-white py-2 px-5 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-external-link-alt mr-2"></i> View Project
+                </a>
+            </div>
+
+            <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 flex flex-col justify-between items-center text-center">
+                <h3 class="text-2xl font-bold text-cerulean mb-3">Data Visualization Dashboard</h3>
+                <p class="text-gray-300 mb-4 flex-grow">
+                    An interactive dashboard for visualizing complex datasets, providing insights
+                    through various charts and graphs.
+                </p>
+                <div class="flex flex-wrap justify-center gap-2 mb-4">
+                    <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">Python</span>
+                    <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">Dash</span>
+                    <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">Plotly</span>
+                    <span class="bg-gray-700 text-gray-200 text-sm px-3 py-1 rounded-full">Pandas</span>
+                </div>
+                <a href="#" class="neo-btn bg-accent-orange text-white py-2 px-5 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-external-link-alt mr-2"></i> View Project
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="resume" class="py-16 px-4 bg-gray-800 text-center relative z-10">
+        <h2 class="text-3xl sm:text-4xl font-bold text-accent-yellow mb-8">My Resume</h2>
+        <div class="max-w-3xl mx-auto bg-gray-900 p-6 sm:p-8 rounded-xl shadow-lg border border-gray-700">
+            <p class="text-lg text-gray-300 mb-6">
+                You can download my full resume by clicking the button below.
+            </p>
+            <a href="path/to/your/resume.pdf" download="Rishi_Prasad_Resume.pdf" class="neo-btn bg-accent-pink text-white py-3 px-8 rounded-lg text-xl">
+                <i class="fas fa-download mr-3"></i> Download Resume
+            </a>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 px-4 bg-gray-900 text-center relative z-10">
+        <h2 class="text-3xl sm:text-4xl font-bold text-accent-orange mb-8">Get In Touch</h2>
+        <div class="max-w-3xl mx-auto bg-gray-800 p-6 sm:p-8 rounded-xl shadow-lg border border-gray-700">
+            <p class="text-lg text-gray-300 mb-6">
+                I'm always open to new opportunities and collaborations. Feel free to reach out!
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="mailto:your.email@example.com" class="neo-btn bg-cerulean text-white py-3 px-6 rounded-lg flex items-center justify-center w-full sm:w-auto">
+                    <i class="fas fa-envelope mr-3"></i> Email Me
+                </a>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank" class="neo-btn bg-cerulean text-white py-3 px-6 rounded-lg flex items-center justify-center w-full sm:w-auto">
+                    <i class="fab fa-linkedin mr-3"></i> LinkedIn
+                </a>
+                <a href="https://github.com/yourusername" target="_blank" class="neo-btn bg-cerulean text-white py-3 px-6 rounded-lg flex items-center justify-center w-full sm:w-auto">
+                    <i class="fab fa-github mr-3"></i> GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="games" class="py-16 px-4 bg-gray-800 text-center relative z-10">
+        <div class="max-w-4xl mx-auto bg-gray-900 p-6 sm:p-8 rounded-xl shadow-lg border border-gray-700">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+                <div class="md:col-span-1 space-y-8">
+                    <h3 class="text-2xl lg:text-3xl font-semibold text-gray-100 flex items-center justify-center"><i class="fas fa-file-alt text-accent-yellow mr-3 text-3xl lg:text-4xl"></i> My Documents</h3>
+                    <a href="path/to/your/resume.pdf" download="Rishi_Prasad_Resume.pdf" class="neo-btn bg-accent-pink text-white py-3 px-8 rounded-lg text-xl flex flex-col sm:flex-row items-center justify-center w-full">
                         <div class="btn-content">
-                            <i class="fab fa-github text-3xl sm:text-4xl"></i><span>GitHub</span>
+                            <i class="fas fa-download text-3xl sm:text-4xl"></i><span>Resume</span>
                         </div>
                     </a>
-                </div>
-                <!-- Work Item: Published Works -->
-                <div class="flex flex-col items-center text-center md:flex-row md:text-left gap-6">
-                    <div class="flex-grow space-y-3">
-                        <h3 class="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-100 flex items-center justify-center md:justify-start">
-                            <i class="fas fa-book-open text-accent-pink mr-3 text-2xl lg:text-3xl"></i> Published Works
-                        </h3>
-                        <p class="text-gray-400 text-sm sm:text-base lg:text-lg px-2 sm:px-0">Check out my published book. A gripping murder mystery set in an isolated lighthouse.</p>
-                    </div>
-                    <a href="https://www.bribooks.com/bookstore/a-murder-in-stillwater" target="_blank" rel="noopener noreferrer" class="neo-btn flex-shrink-0 w-full max-w-[220px] h-24 sm:h-28 bg-cerulean text-white font-semibold rounded-lg text-lg">
+                    <a href="path/to/your/book.pdf" target="_blank" class="neo-btn bg-cerulean text-white py-3 px-8 rounded-lg text-xl flex flex-col sm:flex-row items-center justify-center w-full">
                         <div class="btn-content">
                             <i class="fas fa-external-link-alt text-3xl sm:text-4xl"></i><span>Book</span>
                         </div>
                     </a>
                 </div>
 
-                <!-- Game Section -->
                 <div class="md:col-span-2 space-y-8 pt-8">
                     <h3 class="text-2xl lg:text-3xl font-semibold text-gray-100 flex items-center justify-center"><i class="fas fa-gamepad text-accent-yellow mr-3 text-3xl lg:text-4xl"></i> Play Games</h3>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -215,7 +351,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="text-center py-8 bg-black/50">
         <p class="text-gray-400">&copy; <span id="currentYear"></span> Rishi Prasad. All Rights Reserved.</p>
     </footer>
